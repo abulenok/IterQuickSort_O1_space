@@ -1,20 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package iterative_quicksort_with_o1_space_complexity;
 
 
 import static iterative_quicksort_with_o1_space_complexity.IterQuickSortConstSpace.QuickSort;
 import java.util.Scanner;
-        
+
+/****
+In main function:
+The first value given is a positive integer denoting the number of the data sets.
+Each dataset contains:
+-A positive integer indicating the amount of the data set being loaded.
+-Core data of a set equal to the previously entered value, being integers within the range <-2^63;2^63-1>  
+****/
         
 public class Iterative_QuickSort_with_O1_space_complexity {
 
     public static Scanner in = new Scanner(System.in);
-    
-    
+        
     public static void main(String[] args) {
         int k = in.nextInt();
         int n;
@@ -25,29 +27,34 @@ public class Iterative_QuickSort_with_O1_space_complexity {
             arr = new long[n];
             for(int x = 0; x<n; x++){     
                 arr[x] = in.nextInt();        
-            }
-           
+            }           
             QuickSort(0, n-1, arr);
-            
-            
-            for(int x = 0; x<n; x++){     
-                System.out.print(arr[x]+" ");        
-            }
-            System.out.println(); 
-            
+            Check(arr);
+            Print(arr);            
         }    
     }
     
     public static void Print(long[]arr){
         int n = arr.length;
-        for(int x = 0; x<n; x++){     
+        for(int x = 0; x<n; x++){            
             System.out.print(arr[x]+" ");        
         }
         System.out.println(); 
     }
+    public static void Check(long []arr){
+        int n = arr.length;
+        for(int x = 0; x<n; x++){            
+            if(x+1<n && arr[x]>arr[x+1]){
+                System.out.print("ERROR");
+                System.out.println(); 
+            }        
+        }
+    }
 }
 
 /*
+test example:
+
 in:
 
 4
