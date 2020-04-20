@@ -2,7 +2,7 @@
 package iterative_quicksort_with_o1_space_complexity;
 
 
-import static iterative_quicksort_with_o1_space_complexity.IterQuickSortConstSpace.QuickSort;
+import static iterative_quicksort_with_o1_space_complexity.IterQuickSortConstSpace.QuickSortISC;
 import java.util.Scanner;
 
 /****
@@ -28,7 +28,7 @@ public class Iterative_QuickSort_with_O1_space_complexity {
             for(int x = 0; x<n; x++){     
                 arr[x] = in.nextInt();        
             }           
-            QuickSort(0, n-1, arr);
+            QuickSortISC(0, n-1, arr);
             Check(arr);
             Print(arr);            
         }    

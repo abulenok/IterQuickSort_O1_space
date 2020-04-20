@@ -3,18 +3,19 @@ package iterative_quicksort_with_o1_space_complexity;
 
 public class IterQuickSortConstSpace {
         
-    public static void QuickSort(int L, int R, long []A){
+    public static void QuickSortISC(int L, int R, long []A){
         int q;
         int n = R;
+        int m;
         while (L < R || R!=n) { 
             if (L < R) {             
                 q = Partition(L, R, A);
                 
                 if(q+1<=n){
-                    int m = findMax(q+1, R, A);//finding max value in the right part
+                    m = findMax(q+1, R, A);//finding max value in the right part
                     
                     swap(m, q+1, A);
-                    //later we will search for the first value greater than this value which will indicate the beginnig of the next subarray
+                    //later we will search for the first value greater than this one which will indicate the beginnig of the next subarray
                 }                
                 R = q-1;//move to the left subarray                 
             }
@@ -23,7 +24,7 @@ public class IterQuickSortConstSpace {
                     L = R+1;
                 else
                     L = R+2;
-                //at A[L] we have the maximum value of subarray to sort                        
+                //at A[L] we have the maximum value of subarray that we are going to sort                        
                 if(L>n){
                     break;
                 }               
