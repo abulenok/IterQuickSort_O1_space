@@ -31,8 +31,7 @@ public class IterQuickSortConstSpace {
                 R = findR(L, n, A);//using value at A[L] to find the right bond                
                 swap(R, L, A);               
             }
-        }
-    
+        }    
     }
     
     public static int findR(int L, int R, long[]A){//finds right bound
